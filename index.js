@@ -11,7 +11,7 @@ const loginRouter = require('./routers/login.router');
 const mainRouter = require('./routers/main.router');
 const logoutRouter = require('./routers/logout.router');
 
-const redisClient = redis.createClient({ host: 'session', port: 6379 });
+const redisClient = redis.createClient({ host: 'session', port: 6379 , url:process.env.REDIS_URL});
 
 mongoose.connect('mongodb://mongo/my_database', {
     useNewUrlParser: true,
