@@ -14,11 +14,3 @@ services:
   - type: redis
     name: fh-prod-redis1
     ipAllowList: []
-  - type: pserv
-    name: mongodb
-    env: docker
-    autoDeploy: false
-    disk:
-      name: data
-      mountPath: /data/db
-      sizeGB: 10
