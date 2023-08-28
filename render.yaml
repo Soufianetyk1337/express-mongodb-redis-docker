@@ -21,7 +21,3 @@ services:
     env: docker
     plan: free
     autoDeploy: false
-    disk:
-      name: data
-      mountPath: /data/db
-      sizeGB: 10
