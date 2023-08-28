@@ -16,8 +16,3 @@ services:
     name: fh-prod-redis1
     plan: free
     ipAllowList: []
-  - type: pserv
-    name: mongodb
-    env: docker
-    plan: free
-    autoDeploy: false
