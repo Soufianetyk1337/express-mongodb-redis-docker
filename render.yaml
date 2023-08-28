@@ -5,8 +5,6 @@ services:
     buildFilter:
       paths:
         - ./**/*.js
-    buildCommand: npm install 
-    startCommand: npm start
     envVars:
       - key: REDIS_URL
         fromService:
