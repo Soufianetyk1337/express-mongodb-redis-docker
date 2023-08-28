@@ -1,0 +1,26 @@
+services:
+  - type: web
+    env: docker
+    name: express-rest-api 
+    buildFilter:
+      paths:
+        - ./**/*.js
+    buildCommand: npm install 
+    startCommand: npm start
+    envVars:
+      - key: REDIS_URL
+        fromService:
+          name: fh-prod-redis1
+          type: redis
+          property: connectionString
+  - type: redis
+    name: fh-prod-redis1
+    ipAllowList: []
+  - type: pserv
+    name: mongodb
+    env: docker
+    autoDeploy: false
+    disk:
+      name: data
+      mountPath: /data/db
+      sizeGB: 10

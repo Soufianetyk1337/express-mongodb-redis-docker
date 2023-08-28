@@ -1,0 +1,17 @@
+extends ../layouts/login
+block content
+    h1(class="text-center mt-5") Register
+    form(class="form-group w-25 mx-auto", action="/register" method="POST")
+        if errors
+            each error in errors
+                .alert.alert-danger=error
+        label(for='exampleInputEmail1') Email address
+        input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', name="email", value=email)
+        small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+        label(for='exampleInputPassword1') Password
+        input#exampleInputPassword1.form-control(type='password', name="password1")
+        label(for='exampleInputPassword2') Confirm Password
+        input#exampleInputPassword2.form-control(type='password', name="password2")
+        .w-100.text-center.mt-3
+            button.btn.btn-primary(type='submit') Submit
+            a.btn.btn-primary.ml-2(href="/login") Login
